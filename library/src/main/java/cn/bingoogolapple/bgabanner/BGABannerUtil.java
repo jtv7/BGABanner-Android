@@ -1,6 +1,7 @@
 package cn.bingoogolapple.bgabanner;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.v4.view.ViewCompat;
 import android.util.TypedValue;
@@ -29,6 +30,14 @@ public class BGABannerUtil {
 
     public static ImageView getItemImageView(Context context, @DrawableRes int placeholderResId) {
         return getItemImageView(context, placeholderResId, ImageView.ScaleType.CENTER_CROP);
+    }
+
+    public static ImageView getItemImageView(Context context, Drawable drawable, ImageView.ScaleType scaleType) {
+        ImageView imageView = new ImageView(context);
+        imageView.setImageDrawable(drawable);
+        imageView.setClickable(true);
+        imageView.setScaleType(scaleType);
+        return imageView;
     }
 
     public static ImageView getItemImageView(Context context, @DrawableRes int placeholderResId, ImageView.ScaleType scaleType) {
